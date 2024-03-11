@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+    animation: change 3s alternate infinite;
+}
+
+@keyframes change {
+    0% {
+        background-color: lightblue;
+    } 50%{
+        background-color: lightpink;
+    } 
+
+    100% {
+        background-color: lightslategrey;
+    }
+
+}
+
+.container {
+    position: relative;
+
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: change1 5s alternate infinite;
+}
+
+
+
+.clock span {
+    position: absolute;
+    transform: rotate(calc(30deg* var(--i)));
+    inset: 12px;
+    text-align: center;
+
+}
+
+.clock span b {
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.hand i {
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+
+
+}
+
+@keyframes change1 {
+    0% {
+        background-color:darkblue;
+    }
+
+    100% {
+        background-color: darkmagenta;
+    }
+
+}
